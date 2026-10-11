@@ -17,9 +17,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.remove("no-js");</script>
+  <script>
+    document.documentElement.classList.remove("no-js");
+    // Intro: só na primeira visita da sessão, sem link direto para uma seção e sem "reduzir movimento".
+    try {
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !location.hash && !sessionStorage.getItem("cbpo-intro")) {
+        document.documentElement.classList.add("com-intro");
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas></canvas>
+  <img class="intro-logo" src="assets/logo.png" alt="" width="960" height="299">
+  <button class="intro-pular" type="button" tabindex="-1">Pular ›</button>
+</div>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
 <!-- Ícones reutilizados -->
@@ -600,6 +613,7 @@
 <a class="wa-float" href="#" data-wa target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script src="config.js"></script>
+<script src="intro.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>
