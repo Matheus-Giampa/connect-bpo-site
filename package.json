@@ -1,0 +1,8 @@
+{
+  "name": "connect-bpo-site",
+  "private": true,
+  "description": "Site institucional da CONNECT BPO (estático + função de e-mail na Vercel)",
+  "dependencies": {
+    "nodemailer": "^10.1.0"
+  }
+}
