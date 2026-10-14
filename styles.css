@@ -391,3 +391,8 @@ html.com-intro .hero .reveal { opacity: 0; transform: translateY(18px); }
 .intro.revelando { background-color: transparent; }
 .intro.revelando canvas, .intro.revelando .intro-pular { opacity: 0; }
 .intro.saindo { opacity: 0; }
+
+/* Preço "a partir de" no plano Básico */
+.price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-top: -4px; }
+.price span { color: var(--text-3); font-size: 14px; }
+.price strong { font-size: clamp(28px, 3vw, 34px); font-weight: 500; letter-spacing: -0.02em; color: var(--text); }
