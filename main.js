@@ -213,6 +213,13 @@
     });
   });
 
+  // "Simular com os meus valores": preenche a calculadora com o exemplo para a pessoa ajustar.
+  const exemplo = { salario: 3500, encargos: 810 + 388.89 + 291.67, beneficios: 0, outros: 100 + 200, sistema: 150, bpo: 699.9 };
+  $$("[data-exemplo]").forEach((a) => a.addEventListener("click", () => {
+    Object.entries(exemplo).forEach(([k, n]) => { campos[k].value = n ? numero.format(n) : ""; });
+    calcular();
+  }));
+
   /* ---------- Formulário de proposta ---------- */
   const form = $("#proposta");
   const status = $("#form-status");
